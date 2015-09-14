@@ -10,8 +10,14 @@
         <?php
             include( 'Student.php' );
             
+            /**
+             * Creates an array of students
+             */
             $students = array();
             
+            /**
+             * Adds the first student and defines it's properties
+             */
             $first = new Student();
             $first->surname = "Doe";
             $first->first_name = "John";
@@ -22,6 +28,9 @@
             $first->add_grade(55);
             $students['j123'] = $first;
 
+            /**
+             * Adds the second student and defines it's properties
+             */
             $second = new Student();
             $second->surname = "Einstein";
             $second->first_name = "Albert";
@@ -33,6 +42,9 @@
             $second->add_grade(50);
             $students['a456'] = $second;
             
+            /**
+             * Adds the third student (Myself) and defines it's properties
+             */
             $third = new Student();
             $third->surname = "Zhou";
             $third->first_name = "Becky";
@@ -44,9 +56,16 @@
             $third->add_grade(60);
             $students['b789'] = $third;
             
+            /**
+             * Sorts students in alphabetical order
+             */
             ksort($students);
             
+            /**
+             * Displays all students
+             */
             foreach( $students as $student) {
+                
                 echo $student->toString();
             }
             
